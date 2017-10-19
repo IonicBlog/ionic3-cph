@@ -1,7 +1,7 @@
 import { AppGlobal } from './../../service/app.service';
 import { Component, ViewChild } from '@angular/core';
 
-import { NavController, AlertController, Platform, Content, PopoverController } from 'ionic-angular';
+import { NavController, Platform, Content, PopoverController } from 'ionic-angular';
 import { AppService } from '../../service/app.service';
 import { ProductPage } from '../product/product';
 import { SearchPage } from '../search/search';
@@ -51,7 +51,6 @@ export class HomePage {
     @ViewChild(Content) content: Content;
 
     constructor(public navCtrl: NavController,
-        private alertCtrl: AlertController,
         private popoverCtrl: PopoverController,
         public appService: AppService,
         public platform: Platform) {

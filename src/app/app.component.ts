@@ -15,6 +15,8 @@ export class MyApp {
             // Here you can do any higher level native things you might need.
             StatusBar.styleDefault();
             Splashscreen.hide();
+            
+            StatusBar.overlaysWebView(false);
             StatusBar.backgroundColorByHexString("#ffb900");
             document.addEventListener("resume", function () {
                 // { installMode: 2 }

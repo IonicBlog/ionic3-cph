@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AppService } from '../../service/app.service';
-import { TaobaoPage } from '../taobao/taobao';
+// import { TaobaoPage } from '../taobao/taobao';
+import { ThemeableBrowser } from 'ionic-native';
 
 /*
   Generated class for the ProductDetails page.
@@ -15,7 +16,6 @@ import { TaobaoPage } from '../taobao/taobao';
 })
 export class ProductDetailsPage {
 
-  // product: any;
   selectedItem: any;
   imgs: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public appService: AppService) {
@@ -27,18 +27,42 @@ export class ProductDetailsPage {
     }
   }
 
-  ionViewDidLoad() {
-    this.getProduct();
-  }
+  // goTaobao() {
+  //   if (this.selectedItem.ClickUrl) {
+  //     this.navCtrl.push(TaobaoPage, { title: this.selectedItem.Title, link: this.selectedItem.ClickUrl });
+  //   } else {
+  //     this.navCtrl.push(TaobaoPage, { title: "oh,no ", link: "assets/html/ohno.html" });
+  //   }
+  // }
 
   goTaobao() {
-    if (this.selectedItem.ClickUrl) {
-      this.navCtrl.push(TaobaoPage, { title: this.selectedItem.Title, link: this.selectedItem.ClickUrl });
-    } else {
-      this.navCtrl.push(TaobaoPage, { title: "oh,no ", link: "assets/html/ohno.html" });
-    }
+    let options = {
+      statusbar: {
+        color: '#ffb900'
+      },
+      toolbar: {
+        height: 44,
+        color: '#ffb900'
+      },
+      title: {
+        color: '#ffffffff',
+        showPageTitle: true
+      },
+      backButton: {
+        image: 'back',
+        imagePressed: 'back_pressed',
+        align: 'left',
+        event: 'backPressed'
+      },
+      closeButton: {
+        image: 'close',
+        imagePressed: 'close_pressed',
+        align: 'left',
+        event: 'closePressed'
+      },
+      backButtonCanClose: true
+    };
+    new ThemeableBrowser(this.selectedItem.ClickUrl, '_blank', options)
   }
-  getProduct() {
-   
-  }
+
 }

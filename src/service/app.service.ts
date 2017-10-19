@@ -1,24 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
-
 @Injectable()
 export class AppGlobal {
-
     static cache: any = {
         slides: "_cph_slides",
         categories: "_cph_categories",
         products: "_chp_products"
     }
-
     static domain = "https://tlimama.tongedev.cn"
-
     static API: any = {
         getCategories: '/api/ionic3/getCategories',
         getProducts: '/api/ionic3/getProducts',
         getDetails: '/api/ionic3/details'
     };
-
 }
 
 @Injectable()
