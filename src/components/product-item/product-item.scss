@@ -1,0 +1,66 @@
+product-item {
+.product{
+    ion-row{
+            background-color: #efefef;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            padding-top:3px;
+
+            ion-col{
+                background-color: white;
+                border: 2px solid #efefef;
+                border-radius: 3px;
+                padding: 0px;
+                p{
+                    margin:0px;
+                    padding:0px;
+                    width: 100%;
+                    font-size: 12px;
+                    font-family: "黑体-简";
+                    font-weight: 300;
+                    color: #808080;
+                    height: 26px;
+                    line-height: 26px;
+                    background: rgba(255, 255, 255, 0.8);
+                    overflow: hidden;
+                    text-indent: 5px;
+                }
+            } 
+        }
+
+    .list-price {
+        width: 98%;
+        height: 26px;
+        line-height:18px;
+        position: relative;
+        bottom: 0;
+        margin: 0 2%;
+    }
+  
+    .price-new {
+        font-size: 18px;
+        color: #f8285c;
+    }
+    .list-price i {
+        font-style: normal;
+        font-size: 12px;
+    }
+    .del {
+        color: rgba(171, 171, 171, 1);
+        text-decoration: line-through;
+        margin-left: 2px;
+    }
+    
+    .good-btn {
+        display: block;
+        position: absolute;
+        height: 16px;
+        line-height: 12px;
+        color: #f8285c;
+        font-size: 13px;
+        font-family: "黑体-简";
+        text-align: right;
+        top: 5px;
+        right: 2px;
+    }
+}
+}

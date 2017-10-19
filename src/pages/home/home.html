@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar style="opacity: 0.8" no-border-bottom color="primary">
+    <ion-title>首页</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="share($event)">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-row *ngIf="spinner1">
+    <ion-col text-center>
+      <ion-spinner></ion-spinner>
+    </ion-col>
+  </ion-row>
+  <ion-slides>
+    <ion-slide *ngFor="let item of slides" (click)="goDetails(item)">
+      <img src="{{item.PictUrl}}" alt="">
+      <div class="cover"></div>
+      <span class="title">{{item.Title}}</span>
+    </ion-slide>
+  </ion-slides>
+  <div class="categories">
+    <ion-grid>
+      <ion-row wrap>
+        <ion-col tappable text-center col-3 *ngFor="let c of categories" (click)="goProducts(c)">
+          <i class="iconfont {{c.Icon}} icon"></i>
+          <span class="title">{{c.FavoritesTitle}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+<!-- 
+  <div class="stores">
+    <ion-item-divider class="t-header" color="light"> 精选店铺 </ion-item-divider>
+    <ion-slides>
+      <ion-slide *ngFor="let s1 of stores">
+        <ion-row wrap>
+          <ion-col tappable button *ngFor="let s of s1" (click)="goTaobao(s)">
+            <img style="height: 80%;" src="{{s.logo}}">
+            <span  class="title">{{s.name}}</span>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+  </div> -->
+
+  <ion-item-divider class="t-header" color="light"> 精选优惠 </ion-item-divider>
+  <product-item [products]="coupons"></product-item>
+  <ion-row>
+    <ion-col class="nodata" text-center *ngIf="!hasmore">
+      没有商品啦 ♪(^∇^*)
+    </ion-col>
+  </ion-row>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab bottom right style="opacity: 0.8;">
+    <button ion-fab small (click)="scrollToTop()">回顶部</button>
+  </ion-fab>
+
+</ion-content>
