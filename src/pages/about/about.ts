@@ -62,6 +62,9 @@ export class AboutPage {
     getSales() {
         this.appService.httpGet(AppGlobal.API.getCategories, { appTag: 'cherry' ,cateType:2}, rs => {
         console.debug(rs);
+        if(rs.data.length==0){
+            return;
+        }
         this.sales = rs.data;
         //默认获取第一个分类的商品列表
         this.params.favoritesId = this.sales[0].FavoritesId;

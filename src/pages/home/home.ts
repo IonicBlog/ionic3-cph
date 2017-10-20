@@ -43,7 +43,7 @@ export class HomePage {
     hasmore: boolean = true;
 
     params = {
-        favoritesId: 1927415,
+        favoritesId: -1,
         pageNo: 1,
         pageSize: 20
     }
@@ -77,15 +77,16 @@ export class HomePage {
     ionViewDidLoad() {
         this.getFavorites();
         this.getStores();
-        this.getCoupons();
     }
 
     getFavorites() {
-        this.appService.httpGet(AppGlobal.API.getCategories, { appTag: 'cherry' ,cateType:1}, rs => {
+        this.appService.httpGet(AppGlobal.API.getCategories, { appTag: 'cherry', cateType: 1 }, rs => {
             console.debug(rs);
             this.categories = rs.data;
-            var top = this.categories.slice(0, 1)[0];
+            var _i: number = Math.floor(Math.random() * 10);
+            var top = this.categories[_i];
             this.getSlides(top)
+            this.getCoupons(top);
         })
     }
 
@@ -111,7 +112,8 @@ export class HomePage {
         })
     }
 
-    getCoupons() {
+    getCoupons(top) {
+        this.params.favoritesId = top.FavoritesId;
         this.appService.httpGet(AppGlobal.API.getProducts, this.params, rs => {
             this.coupons = rs.data;
         })
