@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="cn.tongedev.cph" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>成品会</name>
+<widget id="cn.tongedev.cph" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>橙品会</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -67,6 +67,8 @@
         <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />
+        <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
@@ -86,7 +88,7 @@
         <param name="ios-package" value="CDVLogger" />
         <param name="onload" value="true" />
     </feature>
-    <engine name="ios" spec="~4.4.0" />
+    <preference name="SplashShowOnlyFirstTime" value="false" />
     <engine name="android" spec="~6.3.0" />
     <plugin name="cordova-plugin-themeablebrowser" spec="^0.2.17" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
@@ -104,4 +106,5 @@
     <plugin name="cordova-plugin-qqsdk" spec="git+https://github.com/iVanPan/Cordova_QQ.git">
         <variable name="QQ_APP_ID" value="1106325203" />
     </plugin>
+    <engine name="ios" spec="~4.4.0" />
 </widget>

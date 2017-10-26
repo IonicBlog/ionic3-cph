@@ -19,7 +19,6 @@
     "@ionic-native/themeable-browser": "^4.3.2",
     "@ionic/storage": "2.0.1",
     "cordova-android": "~6.3.0",
-    "cordova-ios": "~4.4.0",
     "cordova-plugin-console": "^1.0.7",
     "cordova-plugin-device": "^1.1.6",
     "cordova-plugin-jcore": "^1.1.6",
@@ -63,8 +62,8 @@
       }
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   },
   "cordovaPlatforms": [],
